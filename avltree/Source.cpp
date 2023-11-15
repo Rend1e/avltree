@@ -39,7 +39,7 @@ public:
 	int max(int, int);
 	int nonodes(nodeptr);
 };
-// вставка узла
+// РІСЃС‚Р°РІРєР° СѓР·Р»Р°
 void bstree::insert(int x, nodeptr& p)
 {
 	if (p == NULL)
@@ -88,7 +88,7 @@ void bstree::insert(int x, nodeptr& p)
 		}
 		else
 		{
-			cout << "Элемет существует\n" << endl;
+			cout << "Р­Р»РµРјРµС‚ СЃСѓС‰РµСЃС‚РІСѓРµС‚\n" << endl;
 		}
 	}
 	int m, n, d;
@@ -97,12 +97,12 @@ void bstree::insert(int x, nodeptr& p)
 	d = max(m, n);
 	p->height = d + 1;
 }
-// поиск минимума
+// РїРѕРёСЃРє РјРёРЅРёРјСѓРјР°
 nodeptr bstree::findmin(nodeptr p)
 {
 	if (p == NULL)
 	{
-		cout << "В дереве нет элементов\n" << endl;
+		cout << "Р’ РґРµСЂРµРІРµ РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ\n" << endl;
 		return p;
 	}
 	else
@@ -115,12 +115,12 @@ nodeptr bstree::findmin(nodeptr p)
 		return p;
 	}
 }
-// поиск максимума
+// РїРѕРёСЃРє РјР°РєСЃРёРјСѓРјР°
 nodeptr bstree::findmax(nodeptr p)
 {
 	if (p == NULL)
 	{
-		cout << "В дереве нет элементов\n" << endl;
+		cout << "Р’ РґРµСЂРµРІРµ РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ\n" << endl;
 		return p;
 	}
 	else
@@ -133,12 +133,12 @@ nodeptr bstree::findmax(nodeptr p)
 		return p;
 	}
 }
-// поиск элемента
+// РїРѕРёСЃРє СЌР»РµРјРµРЅС‚Р°
 void bstree::find(int x, nodeptr& p)
 {
 	if (p == NULL)
 	{
-		cout << "Простите, но такого элемента нет\n" << endl;
+		cout << "РџСЂРѕСЃС‚РёС‚Рµ, РЅРѕ С‚Р°РєРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµС‚\n" << endl;
 	}
 	else
 	{
@@ -154,18 +154,18 @@ void bstree::find(int x, nodeptr& p)
 			}
 			else
 			{
-				cout << "Элемент, который вы искали есть в дереве!\n" << endl;
+				cout << "Р­Р»РµРјРµРЅС‚, РєРѕС‚РѕСЂС‹Р№ РІС‹ РёСЃРєР°Р»Рё РµСЃС‚СЊ РІ РґРµСЂРµРІРµ!\n" << endl;
 			}
 		}
 	}
 }
-// копирование дерева
+// РєРѕРїРёСЂРѕРІР°РЅРёРµ РґРµСЂРµРІР°
 void bstree::copy(nodeptr& p, nodeptr& p1)
 {
 	makeempty(p1);
 	p1 = nodecopy(p);
 }
-// очистиь дерево
+// РѕС‡РёСЃС‚РёСЊ РґРµСЂРµРІРѕ
 void bstree::makeempty(nodeptr& p)
 {
 	nodeptr d;
@@ -178,7 +178,7 @@ void bstree::makeempty(nodeptr& p)
 		p = NULL;
 	}
 }
-// копирование узлов
+// РєРѕРїРёСЂРѕРІР°РЅРёРµ СѓР·Р»РѕРІ
 nodeptr bstree::nodecopy(nodeptr& p)
 {
 	nodeptr temp;
@@ -196,13 +196,13 @@ nodeptr bstree::nodecopy(nodeptr& p)
 	}
 }
 
-// удаление узлов
+// СѓРґР°Р»РµРЅРёРµ СѓР·Р»РѕРІ
 void bstree::del(int x, nodeptr& p)
 {
 	nodeptr d;
 	if (p == NULL)
 	{
-		cout << "Простите, но такого элемента нет\n" << endl;
+		cout << "РџСЂРѕСЃС‚РёС‚Рµ, РЅРѕ С‚Р°РєРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµС‚\n" << endl;
 	}
 	else if (x < p->element)
 	{
@@ -217,21 +217,21 @@ void bstree::del(int x, nodeptr& p)
 		d = p;
 		free(d);
 		p = NULL;
-		cout << "Элемент удален\n" << endl;
+		cout << "Р­Р»РµРјРµРЅС‚ СѓРґР°Р»РµРЅ\n" << endl;
 	}
 	else if (p->left == NULL)
 	{
 		d = p;
 		free(d);
 		p = p->right;
-		cout << "Элемент удален\n" << endl;
+		cout << "Р­Р»РµРјРµРЅС‚ СѓРґР°Р»РµРЅ\n" << endl;
 	}
 	else if (p->right == NULL)
 	{
 		d = p;
 		p = p->left;
 		free(d);
-		cout << "Элемент удален\n" << endl;
+		cout << "Р­Р»РµРјРµРЅС‚ СѓРґР°Р»РµРЅ\n" << endl;
 	}
 	else
 	{
@@ -242,7 +242,7 @@ void bstree::del(int x, nodeptr& p)
 int bstree::deletemin(nodeptr& p)
 {
 	int c;
-	cout << "Выбрано удаление минимального значения\n" << endl;
+	cout << "Р’С‹Р±СЂР°РЅРѕ СѓРґР°Р»РµРЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ\n" << endl;
 	if (p->left == NULL)
 	{
 		c = p->element;
@@ -266,7 +266,7 @@ void bstree::preorder(nodeptr p)
 	}
 }
 
-// печать по порядку
+// РїРµС‡Р°С‚СЊ РїРѕ РїРѕСЂСЏРґРєСѓ
 void bstree::inorder(nodeptr p)
 {
 	if (p != NULL)
@@ -394,35 +394,35 @@ int main()
 	root1 = NULL;
 
 	int m;
-	cout << "Введите количество узлов: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СѓР·Р»РѕРІ: ";
 	cin >> m;
 	for (int i = 0; i < m; i++) {
-		cout << "Введите элемент " << i + 1 << ": ";
+		cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ " << i + 1 << ": ";
 		cin >> a;
 		bst.insert(a, root);
 	}
 	system("cls");
 
-	cout << "\n\t\t\t\tАВЛ Дерево" << endl;
+	cout << "\n\t\t\t\tРђР’Р› Р”РµСЂРµРІРѕ" << endl;
 	cout << "\t\t\t\t:::::::::::::::::::\n" << endl;
 
 	do
 	{
 		cout << "\t\t::::::::::::::::::::::::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::1  Вставить новый узел::::::::::::::::::::::" << endl;
-		cout << "\t\t::::2  Найти минимальный элемент::::::::::::::::" << endl;
-		cout << "\t\t::::3  Найти максимальный элемент:::::::::::::::" << endl;
-		cout << "\t\t::::4  Поиск по значению::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::5  Удалить элемент::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::6  Вариант обхода1::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::7  Вариант обхода2::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::8  Вариант обхода3::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::9  Показать высоту дерева:::::::::::::::::::" << endl;
-		cout << "\t\t::::10 Вывод дерева:::::::::::::::::::::::::::::" << endl;
-		cout << "\t\t::::0 Выход:::::::::::::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::1  Р’СЃС‚Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СѓР·РµР»::::::::::::::::::::::" << endl;
+		cout << "\t\t::::2  РќР°Р№С‚Рё РјРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚::::::::::::::::" << endl;
+		cout << "\t\t::::3  РќР°Р№С‚Рё РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚:::::::::::::::" << endl;
+		cout << "\t\t::::4  РџРѕРёСЃРє РїРѕ Р·РЅР°С‡РµРЅРёСЋ::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::5  РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::6  Р’Р°СЂРёР°РЅС‚ РѕР±С…РѕРґР°1::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::7  Р’Р°СЂРёР°РЅС‚ РѕР±С…РѕРґР°2::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::8  Р’Р°СЂРёР°РЅС‚ РѕР±С…РѕРґР°3::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::9  РџРѕРєР°Р·Р°С‚СЊ РІС‹СЃРѕС‚Сѓ РґРµСЂРµРІР°:::::::::::::::::::" << endl;
+		cout << "\t\t::::10 Р’С‹РІРѕРґ РґРµСЂРµРІР°:::::::::::::::::::::::::::::" << endl;
+		cout << "\t\t::::0 Р’С‹С…РѕРґ:::::::::::::::::::::::::::::::::::::" << endl;
 		cout << "\t\t::::::::::::::::::::::::::::::::::::::::::::::::\n" << endl;
 
-		cout << "\nВыберите нужное действие и нажмите Enter: ";
+		cout << "\nР’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅРѕРµ РґРµР№СЃС‚РІРёРµ Рё РЅР°Р¶РјРёС‚Рµ Enter: ";
 		cin >> choice;
 
 		int asd;
@@ -431,29 +431,29 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			cout << "\n\t\tДобавление нового узла" << endl;
+			cout << "\n\t\tР”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СѓР·Р»Р°" << endl;
 			cout << "\t\t:::::::::::::\n" << endl;
-			cout << "Введите элемент: ";
+			cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚: ";
 			cin >> a;
 			bst.insert(a, root);
-			cout << "\nНовый элемент добавлен успешно\n" << endl;
+			cout << "\nРќРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ РґРѕР±Р°РІР»РµРЅ СѓСЃРїРµС€РЅРѕ\n" << endl;
 			break;
 		case 2:
 			if (root != NULL)
 			{
 				min = bst.findmin(root);
-				cout << "\nМинимальный элемент в дереве: " << min->element << endl;
+				cout << "\nРњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РІ РґРµСЂРµРІРµ: " << min->element << endl;
 			}
 			break;
 		case 3:
 			if (root != NULL)
 			{
 				max = bst.findmax(root);
-				cout << "\nМаксимальный элемент в дереве: " << max->element << endl;
+				cout << "\nРњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РІ РґРµСЂРµРІРµ: " << max->element << endl;
 			}
 			break;
 		case 4:
-			cout << "\nВведите искомый элемент: ";
+			cout << "\nР’РІРµРґРёС‚Рµ РёСЃРєРѕРјС‹Р№ СЌР»РµРјРµРЅС‚: ";
 			cin >> findele;
 			if (root != NULL)
 			{
@@ -461,40 +461,40 @@ int main()
 			}
 			break;
 		case 5:
-			cout << "\nКакой узел удалять? : ";
+			cout << "\nРљР°РєРѕР№ СѓР·РµР» СѓРґР°Р»СЏС‚СЊ? : ";
 			cin >> delele;
 			bst.del(delele, root);
 			bst.inorder(root);
 			cout << endl;
 			break;
 		case 6:
-			cout << "\n\t\tВариант обхода1" << endl;
+			cout << "\n\t\tР’Р°СЂРёР°РЅС‚ РѕР±С…РѕРґР°1" << endl;
 			bst.preorder(root);
 			cout << endl;
 			break;
 		case 7:
-			cout << "\n\t\tВариант обхода2" << endl;
+			cout << "\n\t\tР’Р°СЂРёР°РЅС‚ РѕР±С…РѕРґР°2" << endl;
 			bst.inorder(root);
 			cout << endl;
 			break;
 		case 8:
-			cout << "\n\t\tВарант обхода3" << endl;
+			cout << "\n\t\tР’Р°СЂР°РЅС‚ РѕР±С…РѕРґР°3" << endl;
 			bst.postorder(root);
 			cout << endl;
 			break;
 		case 9:
-			cout << "\n\t\tВЫСОТА\n" << endl;
-			cout << "TДерево имеет высоту: " << bst.bsheight(root) << endl;
+			cout << "\n\t\tР’Р«РЎРћРўРђ\n" << endl;
+			cout << "TР”РµСЂРµРІРѕ РёРјРµРµС‚ РІС‹СЃРѕС‚Сѓ: " << bst.bsheight(root) << endl;
 			break;
 		case 10:
-			cout << "\n\t\tДерево\n" << endl;
+			cout << "\n\t\tР”РµСЂРµРІРѕ\n" << endl;
 			asd = 0;
 			t = bst.bsheight(root);
 			//print(root, asd, t);
 			avltree_print_dfs(root, asd);
 			break;
 		case 0:
-			cout << "\n\tБлагодарим вас за использование програмы\n" << endl;
+			cout << "\n\tР‘Р»Р°РіРѕРґР°СЂРёРј РІР°СЃ Р·Р° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РїСЂРѕРіСЂР°РјС‹\n" << endl;
 			break;
 		default:
 			cout << "Sorry! wrong input\n" << endl;
